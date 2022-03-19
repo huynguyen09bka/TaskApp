@@ -16,7 +16,8 @@ class Tasks extends StatelessWidget {
               crossAxisCount: 2, mainAxisSpacing: 10, crossAxisSpacing: 10),
           itemBuilder: (context, index) => taskList[index].isLast!
               ? _buildAddTask()
-              : _buildTask(context, taskList[index])),
+              : 
+        (context, taskList[index])),
     );
   }
 
@@ -59,18 +60,6 @@ class Tasks extends StatelessWidget {
           ],
         )
       ]),
-    );
-  }
-
-  Widget _buildTaskStatus(Color bgColor, Color textColor, String text) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-      decoration: BoxDecoration(
-          color: bgColor, borderRadius: BorderRadius.circular(20)),
-      child: Text(
-        text,
-        style: TextStyle(color: textColor),
-      ),
     );
   }
 }

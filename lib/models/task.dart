@@ -10,7 +10,6 @@ class Task {
   num? left;
   num? done;
   bool isLast;
-
   Task(
       {this.iconData,
       this.title,
