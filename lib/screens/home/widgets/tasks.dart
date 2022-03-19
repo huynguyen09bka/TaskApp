@@ -54,7 +54,7 @@ class Tasks extends StatelessWidget {
           children: [
             _buildTaskStatus(
                 task.btnColor!, task.iconColor!, '${task.left} left'),
-            const SizedBox(width: 10),
+            const SizedBox(width: 5),
             _buildTaskStatus(Colors.white, task.iconColor!, '${task.done} done')
           ],
         )
@@ -69,7 +69,8 @@ class Tasks extends StatelessWidget {
           color: bgColor, borderRadius: BorderRadius.circular(20)),
       child: Text(
         text,
-        style: TextStyle(color: textColor, fontWeight: FontWeight.bold),
+        style: TextStyle(
+            color: textColor, fontWeight: FontWeight.bold, fontSize: 12),
       ),
     );
   }

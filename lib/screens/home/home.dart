@@ -24,6 +24,15 @@ class HomePage extends StatelessWidget {
         ),
         Expanded(child: Tasks())
       ]),
+      bottomNavigationBar: _buildBottomNavigationBar(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        elevation: 0,
+        backgroundColor: Colors.black,
+        onPressed: () {},
+        child: Icon(Icons.add, size: 35),
+      ),
     );
   }
 
@@ -59,4 +68,30 @@ class HomePage extends StatelessWidget {
       ],
     );
   }
+}
+
+Widget _buildBottomNavigationBar() {
+  return Container(
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+        boxShadow: const [
+          BoxShadow(blurRadius: 10, color: Colors.grey, spreadRadius: 5)
+        ]),
+    child: ClipRRect(
+      borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+      child: BottomNavigationBar(
+          backgroundColor: Colors.white,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          selectedItemColor: Colors.blueAccent,
+          items: const [
+            BottomNavigationBarItem(
+                label: 'Home', icon: Icon(Icons.home_rounded, size: 30)),
+            BottomNavigationBarItem(
+                label: 'Person', icon: Icon(Icons.person_rounded, size: 30))
+          ]),
+    ),
+  );
 }
