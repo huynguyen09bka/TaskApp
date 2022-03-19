@@ -9,7 +9,8 @@ class Task {
   Color? btnColor;
   num? left;
   num? done;
-  bool isLast;
+  bool? isLast;
+
   Task(
       {this.iconData,
       this.title,
@@ -18,7 +19,7 @@ class Task {
       this.btnColor,
       this.left,
       this.done,
-      this.isLast = false});
+      this.isLast});
 
   static List<Task> generateTasks() {
     return [
