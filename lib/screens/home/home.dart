@@ -1,5 +1,9 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:taskapp/screens/home/widgets/go_premium.dart';
+
+import 'widgets/tasks.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,9 +13,17 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: _buildAppbar(),
-      body: const Center(
-        child: GoPremium(),
-      ),
+      body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        GoPremium(),
+        Container(
+          padding: EdgeInsets.all(15),
+          child: Text(
+            'Tasks',
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+          ),
+        ),
+        Expanded(child: Tasks())
+      ]),
     );
   }
 
