@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:taskapp/models/task.dart';
 
+import 'widgets/date_picker.dart';
+
 class DetailPage extends StatelessWidget {
   final Task task;
   const DetailPage(this.task);
@@ -11,7 +13,22 @@ class DetailPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       body: CustomScrollView(
-        slivers: [_buildAppBar(context)],
+        slivers: [
+          _buildAppBar(context),
+          SliverToBoxAdapter(
+            child: Container(
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30))),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [DatePicker()],
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
