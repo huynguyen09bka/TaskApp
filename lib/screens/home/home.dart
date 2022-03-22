@@ -76,7 +76,10 @@ Widget _buildBottomNavigationBar() {
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30), topRight: Radius.circular(30)),
         boxShadow: const [
-          BoxShadow(blurRadius: 10, color: Colors.grey, spreadRadius: 5)
+          BoxShadow(
+              blurRadius: 10,
+              color: Color.fromARGB(255, 226, 226, 226),
+              spreadRadius: 5)
         ]),
     child: ClipRRect(
       borderRadius: BorderRadius.only(

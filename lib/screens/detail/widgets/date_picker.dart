@@ -13,19 +13,21 @@ class _DatePickerState extends State<DatePicker> {
   var selected = 4;
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery. of(context). size. width ;
+    double height = MediaQuery. of(context). size. height ;
     return Container(
-      height: 100,
+      height: 0.12 * height,
       padding: const EdgeInsets.symmetric(vertical: 20),
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(30), topRight: Radius.circular(30))),
-      child: ListView.separated(
+      child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) => GestureDetector(
                 onTap: () => setState(() => selected = index),
                 child: Container(
+                  width: width / 7,
                   padding: const EdgeInsets.all(10),
-                  margin: const EdgeInsets.symmetric(horizontal: 8),
                   child: Column(
                     children: [
                       Text(weekList[index],
@@ -46,7 +48,6 @@ class _DatePickerState extends State<DatePicker> {
                   ),
                 ),
               ),
-          separatorBuilder: (_, index) => const SizedBox(width: 5),
           itemCount: weekList.length),
     );
   }
