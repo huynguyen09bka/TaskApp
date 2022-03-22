@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:taskapp/models/task.dart';
+import 'package:taskapp/screens/detail/widgets/title_task.dart';
 
 import 'widgets/date_picker.dart';
 
@@ -24,7 +25,7 @@ class DetailPage extends StatelessWidget {
                       topRight: Radius.circular(30))),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [DatePicker()],
+                children: [DatePicker(), TitleTask()],
               ),
             ),
           )
